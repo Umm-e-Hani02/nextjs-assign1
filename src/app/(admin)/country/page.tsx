@@ -9,7 +9,7 @@ export default function Country() {
         {countries.map((country, index) => (
           <li key={index}>
             <Link href={`/country/${country.name.toLowerCase()}`}>
-            <span className="text-xl w-48 h-10 bg-slate-900 rounded flex items-center justify-center hover:text-gray-200 active:bg-slate-800 transition-all duration-300 ease-in-out">{country.name}</span>
+            <span className="text-xl w-48 h-10 bg-blue-950 rounded flex items-center justify-center hover:text-gray-200 active:bg-slate-800 transition-all duration-300 ease-in-out">{country.name}</span>
             </Link>
           </li>
         ))}
