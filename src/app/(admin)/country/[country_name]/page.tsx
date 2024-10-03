@@ -25,7 +25,7 @@ function CountryName({ params }: { params: { country_name: string } }) {
       <div className="flex justify-center items-center">
 
       <Link href="/country">
-            <button className="bg-slate-900 text-white py-2 px-4 rounded mt-24 hover:text-gray-200 active:bg-slate-800 transition-all duration-300 ease-in-out">Back to Countries</button>
+            <button className="bg-blue-950 text-white py-2 px-4 rounded mt-24 hover:text-gray-200 active:bg-slate-800 transition-all duration-300 ease-in-out">Back to Countries</button>
           </Link>
       </div>
     </div>
