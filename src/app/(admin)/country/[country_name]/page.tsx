@@ -1,9 +1,13 @@
-import CountryCard from "../../CountryCard/page";
+import Link from "next/link"; // Link import kiya gaya
 import { CountryType } from "@/app/CountryType/type";
 
+// capitalizeFirstLetter function define kiya gaya
+const capitalizeFirstLetter = (string: string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
 
-const countriesName = ({ params }: { params: { country_name: string } }) => {
-  const contrydetails: CountryType[] = [
+const CountriesName = ({ params }: { params: { country_name: string } }) => {
+  const countryDetails: CountryType[] = [
     {
       name: "Pakistan",
       capital: "Islamabad",
@@ -27,26 +31,20 @@ const countriesName = ({ params }: { params: { country_name: string } }) => {
     {
       name: "Switzerland",
       capital: "Bern",
-      population:8938611,
+      population: 8938611,
     }
   ];
 
-  const country = contrydetails.find(
+  const country = countryDetails.find(
     (c) => c.name.toLowerCase() === params.country_name.toLowerCase()
   );
+
   if (!country) {
     return <h1 className="p-6 text-xl text-center">Country not found!!</h1>;
   }
 
   return (
     <div>
-<<<<<<< HEAD
-      <CountryCard
-        name={country.name}
-        population={country.population}
-        capital={country.capital}
-      />
-=======
       {country ? (
         <>
           <h1 className="text-3xl p-5">{capitalizeFirstLetter(country.name)}</h1>
@@ -57,14 +55,14 @@ const countriesName = ({ params }: { params: { country_name: string } }) => {
         <h1 className="flex flex-col items-center p-5 text-xl">Country not found!</h1>
       )}
       <div className="flex justify-center items-center">
-
-      <Link href="/country">
-            <button className="bg-blue-950 text-white py-2 px-4 rounded mt-24 hover:text-gray-200 active:bg-slate-800 transition-all duration-300 ease-in-out">Back to Countries</button>
-          </Link>
+        <Link href="/country">
+          <button className="bg-rose-700 text-white py-2 px-4 rounded mt-24 hover:bg-rose-700 hover:scale-110 transition-all duration-300 ease-in-out">
+            Back to Countries
+          </button>
+        </Link>
       </div>
->>>>>>> 3af0765d4599f9c6da31a040686b1e6a112d4d1e
     </div>
   );
 };
 
-export default countriesName;
+export default CountriesName;
